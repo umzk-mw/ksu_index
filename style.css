@@ -52,7 +52,7 @@ body {
   
   /* サイト紹介ボックス（JS開閉・検索バーとの隙間を広めに設定） */
   .about-box {
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
   
   .about-toggle-btn {
