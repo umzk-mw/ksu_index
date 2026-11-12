@@ -1,0 +1,676 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KSU index</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="badge-unofficial">学生有志による非公式ポータル</div>
+    <h1>KSU index</h1>
+    <p>学内リンク＆クイックガイド</p>
+    <div class="last-updated">📅 情報基準日：2026年11月時点</div>
+  </header>
+
+  <main class="container">
+
+    <!-- サイト紹介・注意事項（JSでオンオフ開閉） -->
+    <div class="about-box">
+      <button type="button" class="about-toggle-btn" onclick="toggleAbout()">
+        ℹ️ このサイトについて・注意事項（クリックで開閉）
+      </button>
+      <div id="aboutContent" class="about-content" style="display: none;">
+        <p>
+          <strong>【非公式・学生の立場からの作成】</strong><br>
+          本サイトは、卒業研究の一環として、九州産業大学の学生が「学内の必要な情報やリンクに迷わずたどり着けるように」という目的で個人作成した<strong>非公式</strong>のまとめサイトです。大学公式の運営ではありません。<br>
+          <div class="about-link-area">
+            
+            作成者の卒業研究について<a href="https://design.cs.kyusan-u.ac.jp/socialdesign/?%E6%A2%85%E5%B4%8E%E7%BE%8E%E5%92%8C/%E5%8D%92%E6%A5%AD%E7%A0%94%E7%A9%B6" target="_blank" rel="noopener noreferrer" class="text-link">詳しくはこちら</a>
+        </p>
+        <p>
+          <strong>【情報の時点と免責事項】</strong><br>
+          掲載している内容やリンクは<strong>2026年11月時点</strong>のものです。大学の制度変更やページの移転により、実際の情報と異なる場合があります。重要な手続きや最新の正確な情報は、必ず大学公式サイトやK'sLifeにてご自身でご確認ください。
+        </p>
+      </div>
+    </div>
+    
+
+    <!-- 検索バー -->
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 キーワードで探す（例：履修、食堂、証明書）" onkeyup="filterList()">
+    </div>
+
+    <!-- 毎日使う最優先リンク -->
+    <section class="top-links">
+      <h2>⭐ よく使うリンク</h2>
+      <div class="top-buttons">
+        <a href="https://ksuweb.kyusan-u.ac.jp/lcu-web/" target="_blank" rel="noopener noreferrer" class="quick-btn">K'sLife ↗</a>
+        <a href="https://www.kyusan-u.ac.jp/eas/" target="_blank" rel="noopener noreferrer" class="quick-btn">教務課 ↗</a>
+        <a href="https://www.cnc.kyusan-u.ac.jp/" target="_blank" rel="noopener noreferrer" class="quick-btn">総合情報基盤センター ↗</a>
+      </div>
+    </section>
+
+    <!-- リンク＆補足テキスト一覧（アコーディオン構造） -->
+    <section class="link-list-section">
+      <h2>📌 リンク＆学内ガイド</h2>
+      <ul id="linkList" class="link-list">
+
+        <!-- アイテム1 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              教室の場所がわからない
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先のサイトから検索ができます！<br>
+                基本、号館、方角、階数、番号の順で記載されています。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/eas/map/search.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+                公式教室検索ページを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム2 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              学割証・各種証明書の発行（教務課）
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 1号館1階の証明書発行機で、学割証や卒業証明書、成績証明書などが発行できます。わからないことがあれば、教務課の窓口で履修・資格・単位取得などの質問に答えてくれます。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/eas/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム3 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              食堂・売店の営業時間が知りたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 毎月の営業時間はここから確認ができます。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/campus/life/gakuseibu/news/kiosks/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                営業時間・ニュースを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム4 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              履修ガイド・学内案内図・成績原簿の利用手引き
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 履修についてのガイドがまとめられたPDFがあります。リンク先のサイトから確認できます。<br>
+                受講できる科目や取得できる資格、必要な単位数は学部学科により異なります。各自、便覧で確認してください。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/eas/manual/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                手引き・マニュアル一覧を見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム5（テキスト完結） -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              授業連絡や学校からのお知らせはどこで見れるの？
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 連絡の手段は主に3種類です。メール、ケーズライフ、Teamsです。<br>
+                メールの場合はOutlookやGmailなど、先生によってアドレスが違います。<br>
+                ケーズライフに来る連絡はOutlookを入れたらプッシュ通知で確認することができます。まれに通知が来ない連絡もあるので、ケーズライフは定期的に確認するようにしましょう。<br>
+                Teamsは履修登録の際に授業ごとのチームに追加されます。チームごとの通知をオンにしておくと連絡を見逃さないですよ。
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム6 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              定期を発行したい・奨学金について質問したい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 1号館3階の厚生課が窓口になっています。学生生活でわからないことがあれば学生部に質問しに行きましょう。リンクは学生部のページに繋がっています。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/campus/life/gakuseibu/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                学生部ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム7 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              パソコンを借りたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 ノートPC自動貸出ロッカーがあります。ただし、学外への持ち出しは禁止です。詳しくはリンク先のサイトで確認してください。
+              </p>
+              <a href="https://www.cnc.kyusan-u.ac.jp//user-guide/locker.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+                PC貸出案内を見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム8 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              取れる資格が知りたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 学内で資格取得講座が開講されています。開講時期や費用についてはこちらのサイトで確認してください。<br>
+                また、本学の資格課程は、教職、図書館司書及び司書教諭、学芸員、社会教育主事の4つがあります。詳しくは便覧で確認してください。
+              </p>
+              <a href="https://shikaku.kyusan-u.ac.jp/#Top" target="_blank" rel="noopener noreferrer" class="link-btn">
+                資格取得情報サイトを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム9 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              資格課程について
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 本学で開設している資格取得の課程は、教職、図書館司書及び司書教諭、学芸員、社会教育主事の４課程です。これらの授業の中には、通常の授業とは別に行われるものもあります。<br>
+                これらの資格取得を希望する学生は、卒業に必要な単位のほかに、各課程の授業科目を履修して単位を修得することが必要です。<br>
+                履修するには、各資格に関するガイダンスに出席する必要があります。時期についてはケーズライフで連絡があります。（例年3月です。）<br>
+                ※学部学科によって取得できる資格が異なるので、便覧で確認してください。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム10 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              美術館は誰でも入れるの？
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 どなたでも入館できます。入館料や開館時間に関してはリンク先のサイトよりご確認ください。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/ksumuseum/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                美術館サイトを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム11 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              サークルを作るには？
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 1号館3階の学生課で相談するといいですよ。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/campus/life/gakuseibu/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                学生部サイトを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム12 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              資格の受講料の納付方法
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 資格課程や資格取得講座の受講料納付に関しては、各ガイダンスで案内があります。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム13 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              Adobeの入れ方
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先のマニュアルを参考にしてください。<br>
+                ※芸術学部、建築都市工学部建築学科、造形短期大学部、芸術研究科に在籍する学生および大学院生（研究生、科目等履修生は除く）の人が使えます。
+              </p>
+              <a href="https://www.cnc.kyusan-u.ac.jp/user-guide/user-guide.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+                利用ガイドを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム14 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              Officeアプリの入れ方
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先のマニュアルを参考にしてください。
+              </p>
+              <a href="https://www.cnc.kyusan-u.ac.jp/user-guide/user-guide.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+                利用ガイドを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム15（テキスト完結） -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              他学部、他学科の授業を履修したい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 自分の学科専攻にない科目で、他学部、他学科、他専攻の科目を履修したい場合、履修登録変更期間に授業担当者の元に行き、承認印をもらう必要があります。<br>
+                詳しくは教務課の窓口で対応してもらえるので、受講するか迷っている科目があれば相談しに行きましょう。<br>
+                また、他学科履修をした場合、10単位以内にかぎり、専門科目の選択科目として振替ができます。
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム16 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              卒業要件の確認の仕方
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 ケーズライフで成績原簿を確認してください。必要な単位数・科目については、便覧で確認ができます。
+              </p>
+              <a href="https://ksuweb.kyusan-u.ac.jp/lcu-web/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                K'sLifeを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム17 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              成績の確認方法
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 ケーズライフで確認ができます。<br>
+                『授業・課題』→『成績原簿の出力』→『印刷』で修得単位と評価を一覧で見ることができます。
+              </p>
+              <a href="https://ksuweb.kyusan-u.ac.jp/lcu-web/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                K'sLifeを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム18 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              落とし物をした・忘れ物を拾得した
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 学生証は教務部、その他は1号館3階の厚生課に届けてください。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/campus/life/gakuseibu/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                学生部サイトを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム19 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              図書館の利用方法
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先のサイトを参考にしてください。<br>
+                本を借りるだけでなく、教室を借りたり、展示を見たりすることができますよ。
+              </p>
+              <a href="https://libwww2.kyusan-u.ac.jp/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                図書館Webサイトを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム20 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              試験の時間割はいつどこに出る？
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 試験の時間割の発表は、決まり次第ケーズライフで通知が来ます。<br>
+                通知が来たら、教務課のサイト内で自身の学部・学科を選択し、時間割を確認してください。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム21 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              シラバスって何？
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 開講される授業科目について、毎回の「講義概要・計画」、「到達目標」、「評価基準・方法」及び「教科書」などを記したものです。<br>
+                すべての授業科目にシラバスがあり、履修する授業科目を選択する際の参考となります。<br>
+                基礎教は特に、同じ科目でも教科書が必要な科目とそうでない科目があったりします。<br>
+                評価方法も、出席点のある科目やテストがある科目、レポートだけで良い科目など、担当教員によって様々なので、比較するときに活用してくださいね。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                シラバス検索を開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム22 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              奨学金について知りたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先に案内があります。奨学金に関するガイダンスなどもありますので、随時ケーズライフ等の連絡を確認してください。<br>
+                不明な点は1号館3階の厚生課に奨学金の窓口があるので聞いてみてください。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/campus/scholarship/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                奨学金案内ページを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム23 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              集中講義を履修したい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 集中講義の日程や案内は随時、ケーズライフやTeams、教務課の学部ページなどで案内があります。<br>
+                案内を見逃さないようにしましょう。また、通年科目の場合は前期に履修登録が必要となります。<br>
+                別途ガイダンスを受けないと履修できない科目もあります。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム24 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              アートギャラリーで展示がしたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 ケーズライフで、展示団体募集の案内が来ます。不明点は15号館4階の芸術学部事務室に問い合わせてください。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム25 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              学生特典について知りたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 本学学生の特典があります。リンク先から確認し、ぜひご利用ください。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/campus/support/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                学生特典ページを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム26 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              Wi-Fiを使いたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先のマニュアルを参考にしてください。
+              </p>
+              <a href="https://www.cnc.kyusan-u.ac.jp/user-guide/user-guide.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+                接続マニュアルを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム27 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              印刷したい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 印刷ポイントを使って、学内のパソコンから印刷できます。使用方法はリンク先のマニュアルから確認してください。
+              </p>
+              <a href="https://www.cnc.kyusan-u.ac.jp/user-guide/user-guide.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+                印刷利用ガイドを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム28 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              年間スケジュールが知りたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 ここから確認ができます。学年歴のPDFを印刷しておくと便利ですよ。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/eas/schedule/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                年間スケジュールを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム29 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              就活の相談がしたい・インターンシップに行きたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 キャリア支援センターで相談ができます。面接の練習や求人の案内、ESの添削などもしてもらえますよ。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/csc/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                キャリア支援センターを見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム30 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              大学院に行きたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 リンク先のサイトを参考にしてください。進路相談会や募集要項など詳しく記載があります。
+              </p>
+              <a href="https://www.kyusan-u.ac.jp/daigakuin/exam/nyugaku.html" target="_blank" rel="noopener noreferrer" class="link-btn">
+                大学院入試案内を見る ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+        <!-- アイテム31 -->
+        <li class="link-item">
+          <details>
+            <summary class="question">
+              転学部・転学科がしたい
+            </summary>
+            <div class="answer">
+              <p class="note-text">
+                💡 例年11月ごろにケーズライフで案内があります。手続きなどは募集要項を確認してください。
+              </p>
+              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
+                詳細ページを開く ↗
+              </a>
+            </div>
+          </details>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>※本サイトは学生が個人で作成した非公式ポータルです（2026年11月時点の情報）</p>
+    <p>&copy; 2026 KSU index</p>
+  </footer>
+
+  <!-- JavaScript（開閉オンオフ＆検索） -->
+  <script>
+    // 1. サイト紹介ページ（注意事項）のオンオフ
+    function toggleAbout() {
+      const content = document.getElementById('aboutContent');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+      } else {
+        content.style.display = 'none';
+      }
+    }
+
+    // 2. 個別アコーディオンのオンオフ
+    function toggleAccordion(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('.toggle-icon');
+
+      if (answer.style.display === 'none') {
+        answer.style.display = 'block';
+        icon.textContent = '－';
+        btn.classList.add('is-open');
+      } else {
+        answer.style.display = 'none';
+        icon.textContent = '＋';
+        btn.classList.remove('is-open');
+      }
+    }
+
+    // 3. すべて開く・すべて閉じる（一括オンオフ）
+    function toggleAll(open) {
+      const buttons = document.querySelectorAll('.question-btn');
+      buttons.forEach(btn => {
+        const answer = btn.nextElementSibling;
+        const icon = btn.querySelector('.toggle-icon');
+        if (open) {
+          answer.style.display = 'block';
+          icon.textContent = '－';
+          btn.classList.add('is-open');
+        } else {
+          answer.style.display = 'none';
+          icon.textContent = '＋';
+          btn.classList.remove('is-open');
+        }
+      });
+    }
+
+    // 4. リアルタイム検索
+    function filterList() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.link-item');
+
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(input)) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

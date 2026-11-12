@@ -1,0 +1,262 @@
+/* 全体設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  
+  /* 非公式バッジ */
+.badge-unofficial {
+  display: inline-block;
+  background-color: #e53e3e;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+}
+
+  /* ヘッダー */
+  .header {
+    background-color: #1a365d; /* 九産大ブルー */
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 16px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  
+  .header p {
+    margin: 5px 0 0 0;
+    font-size: 0.85rem;
+    opacity: 0.8;
+  }
+
+  /* 情報基準日 */
+.last-updated {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* サイト紹介ボックス（JS開閉） */
+.about-box {
+  margin-bottom: 30px;
+}
+
+.about-toggle-btn {
+  width: 100%;
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+}
+
+.about-toggle-btn:hover {
+  background-color: #cbd5e1;
+}
+
+.about-content {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.about-content p {
+  margin: 0 0 10px 0;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+  
+
+  /* 検索バー */
+  .search-box {
+    margin-bottom: 20px;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  .search-box input:focus {
+    border-color: #1a365d;
+  }
+  
+  /* クイックリンクボタン */
+  .top-links h2, .link-list-section h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #1a365d;
+  }
+  
+  .top-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .quick-btn {
+    flex: 1;
+    background-color: #ffffff;
+    color: #1a365d;
+    border: 1.5px solid #1a365d;
+    text-align: center;
+    padding: 12px 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+
+  /* リストヘッダーと一括開閉ボタン */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bulk-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.bulk-btn {
+  background-color: #ffffff;
+  border: 1px solid #94a3b8;
+  color: #475569;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  
+  /* フラットリスト */
+  .link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .link-item {
+    background: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+  
+  /* アコーディオン設定 */
+  .link-item details {
+    width: 100%;
+  }
+  
+  /* 質問（タップするエリア） */
+  .question {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #1a365d;
+    cursor: pointer;
+    padding: 14px 16px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  
+  /* ブラウザデフォルトの矢印アイコンを消す */
+  .question::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* 右側にプラスアイコンを表示 */
+  .question::after {
+    content: "＋";
+    font-size: 1.1rem;
+    color: #64748b;
+    font-weight: normal;
+    margin-left: 12px;
+    flex-shrink: 0;
+  }
+  
+  /* 開いた状態（マイナスアイコン＋下線） */
+  details[open] .question::after {
+    content: "－";
+  }
+  
+  details[open] .question {
+    border-bottom: 1px dashed #e2e8f0;
+    background-color: #f8fafc;
+  }
+  
+  /* 回答（開くエリア） */
+  .answer {
+    padding: 14px 16px;
+  }
+  
+  /* 補足テキスト枠 */
+  .note-text {
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+    color: #334155;
+    background-color: #f1f5f9;
+    padding: 10px 12px;
+    border-radius: 6px;
+    line-height: 1.5;
+  }
+  
+  /* 外部リンクボタン */
+  .link-btn {
+    display: inline-block;
+    background-color: #1a365d;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-top: 4px;
+    transition: opacity 0.2s;
+  }
+  
+  .link-btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* フッター */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+  }
