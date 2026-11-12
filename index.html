@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -21,15 +20,13 @@
     <!-- サイト紹介・注意事項（JSでオンオフ開閉） -->
     <div class="about-box">
       <button type="button" class="about-toggle-btn" onclick="toggleAbout()">
-        ℹ️ このサイトについて・注意事項（クリックで開閉）
+        ℹ️ このサイトについて・注意事項（タップで開閉）
       </button>
       <div id="aboutContent" class="about-content" style="display: none;">
         <p>
           <strong>【非公式・学生の立場からの作成】</strong><br>
           本サイトは、卒業研究の一環として、九州産業大学の学生が「学内の必要な情報やリンクに迷わずたどり着けるように」という目的で個人作成した<strong>非公式</strong>のまとめサイトです。大学公式の運営ではありません。<br>
-          <div class="about-link-area">
-            
-            作成者の卒業研究について<a href="https://design.cs.kyusan-u.ac.jp/socialdesign/?%E6%A2%85%E5%B4%8E%E7%BE%8E%E5%92%8C/%E5%8D%92%E6%A5%AD%E7%A0%94%E7%A9%B6" target="_blank" rel="noopener noreferrer" class="text-link">詳しくはこちら</a>
+          作成者の卒業研究について<a href="https://design.cs.kyusan-u.ac.jp/socialdesign/?%E6%A2%85%E5%B4%8E%E7%BE%8E%E5%92%8C/%E5%8D%92%E6%A5%AD%E7%A0%94%E7%A9%B6" target="_blank" rel="noopener noreferrer" class="text-link">詳しくはこちら ↗</a>
         </p>
         <p>
           <strong>【情報の時点と免責事項】</strong><br>
@@ -37,11 +34,10 @@
         </p>
       </div>
     </div>
-    
 
     <!-- 検索バー -->
     <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 キーワードで探す（例：履修、食堂、証明書）" onkeyup="filterList()">
+      <input type="text" id="searchInput" placeholder="🔍 キーワード検索（例：履修、食堂、証明書）" onkeyup="filterList()">
     </div>
 
     <!-- 毎日使う最優先リンク -->
@@ -56,7 +52,11 @@
 
     <!-- リンク＆補足テキスト一覧（アコーディオン構造） -->
     <section class="link-list-section">
-      <h2>📌 リンク＆学内ガイド</h2>
+      <div class="list-header">
+        <h2>📌 リンク＆学内ガイド</h2>
+        <span id="itemCount" class="item-count">全31件</span>
+      </div>
+
       <ul id="linkList" class="link-list">
 
         <!-- アイテム1 -->
@@ -87,9 +87,6 @@
               <p class="note-text">
                 💡 1号館1階の証明書発行機で、学割証や卒業証明書、成績証明書などが発行できます。わからないことがあれば、教務課の窓口で履修・資格・単位取得などの質問に答えてくれます。
               </p>
-              <a href="https://www.kyusan-u.ac.jp/eas/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -129,7 +126,7 @@
           </details>
         </li>
 
-        <!-- アイテム5（テキスト完結） -->
+        <!-- アイテム5 -->
         <li class="link-item">
           <details>
             <summary class="question">
@@ -173,7 +170,7 @@
               <p class="note-text">
                 💡 ノートPC自動貸出ロッカーがあります。ただし、学外への持ち出しは禁止です。詳しくはリンク先のサイトで確認してください。
               </p>
-              <a href="https://www.cnc.kyusan-u.ac.jp//user-guide/locker.php" target="_blank" rel="noopener noreferrer" class="link-btn">
+              <a href="https://www.cnc.kyusan-u.ac.jp/user-guide/locker.php" target="_blank" rel="noopener noreferrer" class="link-btn">
                 PC貸出案内を見る ↗
               </a>
             </div>
@@ -211,9 +208,6 @@
                 履修するには、各資格に関するガイダンスに出席する必要があります。時期についてはケーズライフで連絡があります。（例年3月です。）<br>
                 ※学部学科によって取得できる資格が異なるので、便覧で確認してください。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -262,9 +256,6 @@
               <p class="note-text">
                 💡 資格課程や資格取得講座の受講料納付に関しては、各ガイダンスで案内があります。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -304,7 +295,7 @@
           </details>
         </li>
 
-        <!-- アイテム15（テキスト完結） -->
+        <!-- アイテム15 -->
         <li class="link-item">
           <details>
             <summary class="question">
@@ -401,9 +392,6 @@
                 💡 試験の時間割の発表は、決まり次第ケーズライフで通知が来ます。<br>
                 通知が来たら、教務課のサイト内で自身の学部・学科を選択し、時間割を確認してください。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -421,9 +409,6 @@
                 基礎教は特に、同じ科目でも教科書が必要な科目とそうでない科目があったりします。<br>
                 評価方法も、出席点のある科目やテストがある科目、レポートだけで良い科目など、担当教員によって様々なので、比較するときに活用してくださいね。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                シラバス検索を開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -458,9 +443,6 @@
                 案内を見逃さないようにしましょう。また、通年科目の場合は前期に履修登録が必要となります。<br>
                 別途ガイダンスを受けないと履修できない科目もあります。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -475,9 +457,6 @@
               <p class="note-text">
                 💡 ケーズライフで、展示団体募集の案内が来ます。不明点は15号館4階の芸術学部事務室に問い合わせてください。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -594,9 +573,6 @@
               <p class="note-text">
                 💡 例年11月ごろにケーズライフで案内があります。手続きなどは募集要項を確認してください。
               </p>
-              <a href="https://www.kyusan-u.ac.id/" target="_blank" rel="noopener noreferrer" class="link-btn">
-                詳細ページを開く ↗
-              </a>
             </div>
           </details>
         </li>
@@ -611,9 +587,9 @@
     <p>&copy; 2026 KSU index</p>
   </footer>
 
-  <!-- JavaScript（開閉オンオフ＆検索） -->
+  <!-- JavaScript（サイト紹介開閉＆リアルタイム検索） -->
   <script>
-    // 1. サイト紹介ページ（注意事項）のオンオフ
+    // サイト紹介ページ（注意事項）のオンオフ
     function toggleAbout() {
       const content = document.getElementById('aboutContent');
       if (content.style.display === 'none') {
@@ -623,53 +599,23 @@
       }
     }
 
-    // 2. 個別アコーディオンのオンオフ
-    function toggleAccordion(btn) {
-      const answer = btn.nextElementSibling;
-      const icon = btn.querySelector('.toggle-icon');
-
-      if (answer.style.display === 'none') {
-        answer.style.display = 'block';
-        icon.textContent = '－';
-        btn.classList.add('is-open');
-      } else {
-        answer.style.display = 'none';
-        icon.textContent = '＋';
-        btn.classList.remove('is-open');
-      }
-    }
-
-    // 3. すべて開く・すべて閉じる（一括オンオフ）
-    function toggleAll(open) {
-      const buttons = document.querySelectorAll('.question-btn');
-      buttons.forEach(btn => {
-        const answer = btn.nextElementSibling;
-        const icon = btn.querySelector('.toggle-icon');
-        if (open) {
-          answer.style.display = 'block';
-          icon.textContent = '－';
-          btn.classList.add('is-open');
-        } else {
-          answer.style.display = 'none';
-          icon.textContent = '＋';
-          btn.classList.remove('is-open');
-        }
-      });
-    }
-
-    // 4. リアルタイム検索
+    // リアルタイム検索（ヒット件数も自動更新）
     function filterList() {
       const input = document.getElementById('searchInput').value.toLowerCase();
       const items = document.querySelectorAll('.link-item');
+      let visibleCount = 0;
 
       items.forEach(item => {
         const text = item.textContent.toLowerCase();
         if (text.includes(input)) {
           item.style.display = "";
+          visibleCount++;
         } else {
           item.style.display = "none";
         }
       });
+
+      document.getElementById('itemCount').textContent = `全${visibleCount}件`;
     }
   </script>
 </body>
