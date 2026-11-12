@@ -14,17 +14,17 @@ body {
   }
   
   /* 非公式バッジ */
-.badge-unofficial {
-  display: inline-block;
-  background-color: #e53e3e;
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: bold;
-  padding: 3px 10px;
-  border-radius: 12px;
-  margin-bottom: 6px;
-}
-
+  .badge-unofficial {
+    display: inline-block;
+    background-color: #e53e3e;
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-bottom: 6px;
+  }
+  
   /* ヘッダー */
   .header {
     background-color: #1a365d; /* 九産大ブルー */
@@ -35,72 +35,84 @@ body {
   
   .header h1 {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.45rem;
   }
   
   .header p {
-    margin: 5px 0 0 0;
+    margin: 4px 0 6px 0;
     font-size: 0.85rem;
-    opacity: 0.8;
+    opacity: 0.85;
   }
-
-  /* 情報基準日 */
-.last-updated {
-  font-size: 0.75rem;
-  color: #cbd5e1;
-}
-
-/* サイト紹介ボックス（JS開閉） */
-.about-box {
-  margin-bottom: 30px;
-}
-
-.about-toggle-btn {
-  width: 100%;
-  background-color: #e2e8f0;
-  color: #1e293b;
-  border: none;
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-align: left;
-}
-
-.about-toggle-btn:hover {
-  background-color: #cbd5e1;
-}
-
-.about-content {
-  background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  padding: 14px;
-  margin-top: 6px;
-  font-size: 0.82rem;
-  line-height: 1.6;
-  color: #334155;
-}
-
-.about-content p {
-  margin: 0 0 10px 0;
-}
-
-.about-content p:last-child {
-  margin-bottom: 0;
-}
   
-
+  /* 情報基準日 */
+  .last-updated {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+  }
+  
+  /* サイト紹介ボックス（JS開閉・検索バーとの隙間を広めに設定） */
+  .about-box {
+    margin-bottom: 28px;
+  }
+  
+  .about-toggle-btn {
+    width: 100%;
+    background-color: #e2e8f0;
+    color: #1e293b;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 8px;
+    font-size: 0.84rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+  }
+  
+  .about-toggle-btn:hover {
+    background-color: #cbd5e1;
+  }
+  
+  .about-content {
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 6px;
+    font-size: 0.83rem;
+    line-height: 1.65;
+    color: #334155;
+  }
+  
+  .about-content p {
+    margin: 0 0 12px 0;
+  }
+  
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* テキストリンク（卒業研究リンク用） */
+  .text-link {
+    color: #2563eb;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 2px;
+  }
+  
+  .text-link:hover {
+    color: #1d4ed8;
+  }
+  
   /* 検索バー */
   .search-box {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   
   .search-box input {
     width: 100%;
-    padding: 14px;
-    font-size: 1rem;
+    padding: 13px 14px;
+    font-size: 0.95rem;
     border: 2px solid #cbd5e1;
     border-radius: 8px;
     box-sizing: border-box;
@@ -111,54 +123,56 @@ body {
     border-color: #1a365d;
   }
   
-  /* クイックリンクボタン */
-  .top-links h2, .link-list-section h2 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+  /* セクション見出し */
+  .top-links h2,
+  .list-header h2 {
+    font-size: 1.05rem;
+    margin: 0 0 10px 0;
     color: #1a365d;
   }
   
+  /* クイックリンクボタン（スマホで2行になっても上下左右中央に揃える） */
   .top-buttons {
     display: flex;
     gap: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
   
   .quick-btn {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffffff;
     color: #1a365d;
     border: 1.5px solid #1a365d;
     text-align: center;
-    padding: 12px 8px;
+    padding: 10px 6px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.3;
+    word-break: keep-all;
   }
-
-  /* リストヘッダーと一括開閉ボタン */
-.list-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.bulk-actions {
-  display: flex;
-  gap: 6px;
-}
-
-.bulk-btn {
-  background-color: #ffffff;
-  border: 1px solid #94a3b8;
-  color: #475569;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
+  
+  /* リストヘッダーと件数表示 */
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .list-header h2 {
+    margin: 0;
+  }
+  
+  .item-count {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: bold;
+  }
   
   /* フラットリスト */
   .link-list {
@@ -182,7 +196,7 @@ body {
   
   /* 質問（タップするエリア） */
   .question {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     font-weight: bold;
     color: #1a365d;
     cursor: pointer;
@@ -191,6 +205,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    line-height: 1.4;
     user-select: none;
   }
   
@@ -226,26 +241,26 @@ body {
   
   /* 補足テキスト枠 */
   .note-text {
-    margin: 0 0 10px 0;
+    margin: 0;
     font-size: 0.85rem;
     color: #334155;
     background-color: #f1f5f9;
     padding: 10px 12px;
     border-radius: 6px;
-    line-height: 1.5;
+    line-height: 1.55;
   }
   
-  /* 外部リンクボタン */
+  /* 外部リンクボタン（下にリンクがある時だけ上の余白をつける） */
   .link-btn {
     display: inline-block;
     background-color: #1a365d;
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.84rem;
     font-weight: bold;
     padding: 8px 14px;
     border-radius: 6px;
-    margin-top: 4px;
+    margin-top: 10px;
     transition: opacity 0.2s;
   }
   
@@ -256,7 +271,12 @@ body {
   /* フッター */
   .footer {
     text-align: center;
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #94a3b8;
+    padding: 20px 16px;
+    font-size: 0.78rem;
+    color: #64748b;
+    line-height: 1.6;
+  }
+  
+  .footer p {
+    margin: 4px 0;
   }
